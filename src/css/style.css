@@ -168,16 +168,57 @@ input:focus {
   border: 2px solid #573e61;
 }
 
-.hide, .hidden-word {
+.hide,
+.hidden-word {
   display: none;
 }
 
-
 .key-correct {
- background-color: rgb(122, 190, 122);
+  background-color: rgb(122, 190, 122);
 }
 
 .key-wrong {
-  opacity: .2;
+  opacity: 0.2;
   cursor: auto;
+}
+
+@media (max-width: 800px) {
+  .forca-word {
+    gap: 30px;
+  }
+  .word-placeholder {
+    font-size: 1.5rem;
+  }
+  .word-placeholder::after {
+    width: 30px;
+    top: 30px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .forca-word {
+    gap: 15px;
+  }
+  .word-placeholder {
+    font-size: 1.2rem;
+  }
+  .word-placeholder::after {
+    width: 20px;
+    top: 30px;
+    left: -5px;
+  }
+  .forca-keyboard {
+    padding: 10px;
+    gap: 10px;
+  }
+  .key {
+    font-size: 1rem;
+    padding: 5px;
+  }
+  .button1,
+  .button2 {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
 }
