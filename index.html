@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Forca</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+
+  <main class="container">
+    <div class="header">
+      <svg width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3958 23.6529C23.3524 23.9311 23.2466 24.1959 23.0863 24.4275C22.926 24.659 22.7154 24.8512 22.4703 24.9898C21.9766 25.3086 21.5447 25.468 21.1077 25.6274C20.177 25.9488 19.1974 26.2702 18.1613 26.643C17.0687 27.0157 16.0891 27.3885 15.215 27.6585C14.1249 28.0313 13.0888 28.3526 12.1041 28.7254C11.3633 29.0425 10.6674 29.4556 10.0345 29.9544C9.44584 30.4877 8.93212 31.0983 8.50734 31.7695C8.07027 32.515 7.79518 33.4766 7.79518 34.5975C7.79518 36.842 8.34022 38.5491 9.43289 39.6161C10.523 40.7396 12.5438 41.2718 15.5389 41.2718C18.5933 41.2718 20.6655 40.6856 21.7607 39.5107C22.8482 38.3357 23.3932 36.6826 23.3932 34.5487V23.6529H23.3958ZM15.5415 0C20.8891 0 24.815 1.01553 27.3217 3.09802C29.831 5.12908 31.0856 7.74119 31.0856 10.8366V37.2148C31.0856 38.2817 30.8696 39.4567 30.4891 40.737C30.1035 42.0225 29.3425 43.1949 28.1418 44.2592C26.9977 45.3313 25.4166 46.2389 23.3984 46.933C21.3802 47.6272 18.7629 48 15.5441 48C12.3304 48 9.70798 47.6272 7.69234 46.933C5.6767 46.2389 4.09298 45.3313 2.9489 44.2592C1.8846 43.3001 1.07834 42.089 0.604178 40.737C0.218532 39.4592 0 38.2843 0 37.2174V33.001C0 30.7565 0.599036 28.674 1.79968 26.8563C3.00032 24.9898 4.68945 23.7095 6.8722 22.9073C7.96229 22.5345 9.21693 22.1618 10.6335 21.681C12.0527 21.1976 13.3588 20.7169 14.6699 20.2927C15.9811 19.8633 17.1252 19.434 18.1048 19.0586C18.6959 18.8221 19.2963 18.6094 19.9044 18.421L20.8866 17.9402C21.2722 17.7268 21.6501 17.4055 22.0332 16.9787C22.4137 16.5545 22.7402 16.0737 23.0153 15.5389C23.306 14.9599 23.4557 14.3203 23.4524 13.6724V11.9627C23.4564 11.3361 23.3249 10.716 23.0667 10.145C22.8508 9.5023 22.4137 8.91612 21.8147 8.38393C21.2156 7.84917 20.3955 7.42239 19.416 7.09845C18.4338 6.78222 17.1278 6.62025 15.6521 6.62025C12.5977 6.62025 10.5795 7.21157 9.48945 8.43535C8.5639 9.50488 8.01885 10.8392 7.91087 12.3329C7.91087 12.6543 7.63835 12.8677 7.30927 12.8677L0.658168 12.9757C0.500177 12.9764 0.348309 12.9146 0.235632 12.8039C0.122956 12.6931 0.0585941 12.5423 0.0565613 12.3844V10.8418C0.0565613 9.3429 0.331655 7.95458 0.930691 6.62025C1.5323 5.28334 2.46042 4.16497 3.71248 3.20086C4.96711 2.24189 6.60482 1.44231 8.56647 0.907552C10.4767 0.26481 12.8214 0 15.5467 0H15.5415Z" fill="#0A3871" />
+      </svg>
+    </div>
+
+    <section class="start">
+      <div class="buttons-start">
+        <span id="button-start-game" class="button1">Começar Jogo</span>
+        <span id="button-add-word-page" class="button2">Adicionar Palavra</span>
+      </div>
+    </section>
+
+    <section class="word-add hide">
+      <div class="word-add">
+        <div>
+          <label for="palavra">Palavra</label>
+          <input type="text" id="palavra" name="palavra" placeholder="Banana">
+        </div>
+        <div>
+          <label for="dica">Dica</label>
+          <input type="text" id="dica" name="dica" placeholder="Fruta">
+        </div>
+        <span id="button-add-word" class="button1">Adicionar</span>
+      </div>
+    </section>
+
+
+    <section class="forca hide">
+      <div class="forca-container">
+        <div class="forca-tip">Dica:Animal</div>
+        <div class="forca-forca">
+          <svg class="svg-forca">
+            <line x1="0" x2="200" y1="290" y2="290" stroke-width="7" stroke="black"></line>
+            <line x1="50" x2="50" y1="20" y2="290" stroke-width="7" stroke="black"></line>
+            <line x1="50" x2="190" y1="20" y2="20" stroke-width="7" stroke="black"></line>
+            <line x1="190" x2="190" y1="20" y2="45" stroke-width="7" stroke="black"></line>
+            <circle class="boneco hide-boneco" data-id="1" cx="190" cy="70" r="20" fill="none" stroke-width="5"></circle>
+            <line class="boneco hide-boneco" data-id="2" x1="190" x2="190" y1="90" y2="160" stroke-width="5"></line>
+            <line class="boneco hide-boneco" data-id="3" x1="150" x2="190" y1="140" y2="90" stroke-width="5"></line>
+            <line class="boneco hide-boneco" data-id="4" x1="230" x2="190" y1="140" y2="90" stroke-width="5"></line>
+            <line class="boneco hide-boneco" data-id="5" x1="190" x2="220" y1="160" y2="210" stroke-width="5"></line>
+            <line class="boneco hide-boneco" data-id="6" x1="190" x2="160" y1="160" y2="210" stroke-width="5">
+              <line>
+          </svg>
+        </div>
+        <div class="div-forca-word">
+        </div>
+        <div class="forca-keyboard">
+          <div class="keyboard-row first-row">
+            <span data-key="q" class="key">q</span>
+            <span data-key="w" class="key">w</span>
+            <span data-key="e" class="key">e</span>
+            <span data-key="r" class="key">r</span>
+            <span data-key="t" class="key">t</span>
+            <span data-key="y" class="key">y</span>
+            <span data-key="u" class="key">u</span>
+            <span data-key="i" class="key">i</span>
+            <span data-key="o" class="key">o</span>
+            <span data-key="p" class="key">p</span>
+          </div>
+          <div class="keyboard-row second-row">
+            <span data-key="a" class="key">a</span>
+            <span data-key="s" class="key">s</span>
+            <span data-key="d" class="key">d</span>
+            <span data-key="f" class="key">f</span>
+            <span data-key="g" class="key">g</span>
+            <span data-key="h" class="key">h</span>
+            <span data-key="j" class="key">j</span>
+            <span data-key="k" class="key">k</span>
+            <span data-key="l" class="key">l</span>
+          </div>
+          <div class="keyboard-row third-row">
+            <span data-key="z" class="key">z</span>
+            <span data-key="x" class="key">x</span>
+            <span data-key="c" class="key">c</span>
+            <span data-key="v" class="key">v</span>
+            <span data-key="b" class="key">b</span>
+            <span data-key="n" class="key">n</span>
+            <span data-key="m" class="key">m</span>
+          </div>
+        </div>
+        <span class="hidden-word"></span>
+      </div>
+      <div class="buttons-forca">
+        <span id="button-replay" class="button1">Novo Jogo</span>
+        <span id="button-giveup" class="button2">Mostrar Palavra</span>
+      </div>
+    </section>
+  </main>
+
+
+
+  <script src="src/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+body {
+  font-family: "Roboto Mono", monospace;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  background-color: rgb(240, 240, 240);
+  border-radius: 5px;
+}
+
+.header {
+  background-color: #b09eb7;
+  padding: 10px 20px;
+  border-radius: 5px 5px 0 0;
+}
+
+.logo-alura {
+  padding: 20px 10px;
+}
+
+.buttons-start,
+.word-add {
+  max-width: 300px;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+label {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  font-size: 1.3rem;
+  padding: 10px 15px;
+  width: 300px;
+  box-sizing: border-box;
+  border: 2px solid #b09eb7;
+  background-color: transparent;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  border: 2px solid #573e61;
+}
+
+.forca {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.forca-tip {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.forca-forca {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.svg-forca {
+  stroke: #b09eb7;
+  stroke-linecap: round;
+}
+
+.hide-boneco {
+  display: none;
+}
+
+.forca-word {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.word-placeholder {
+  font-size: 2rem;
+  position: relative;
+  margin-top: 20px;
+}
+
+.word-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  top: 40px;
+  left: -15px;
+  background-color: #b09eb7;
+  border-radius: 5px;
+}
+
+.forca-keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #b09eb7;
+  padding: 20px;
+  max-width: 520px;
+  border-radius: 5px;
+  margin: 50px auto 30px auto;
+}
+
+.keyboard-row {
+  margin: 0 auto;
+}
+
+.key {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.295),
+    -2px -2px 1px rgba(255, 255, 255, 0.295);
+}
+
+.key:active {
+  background: #b09eb7;
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.295),
+    inset -2px -2px 1px rgba(255, 255, 255, 0.295);
+}
+
+.buttons-forca {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.button1,
+.button2 {
+  background-color: #b09eb7;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.button2 {
+  background-color: #ffffff;
+  border: 2px solid #b09eb7;
+}
+
+.button1:hover {
+  background-color: #573e61;
+}
+
+.button2:hover {
+  border: 2px solid #573e61;
+}
+
+.hide, .hidden-word {
+  display: none;
+}
+
+
+.key-correct {
+ background-color: rgb(122, 190, 122);
+}
+
+.key-wrong {
+  opacity: .2;
+  cursor: auto;
+}
