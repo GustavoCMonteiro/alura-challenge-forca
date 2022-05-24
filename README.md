@@ -11,6 +11,11 @@
   </a>
 </div>  
 
+## Descrição
+
+### Projeto desenvolvido para o bootcamp da Alura em parceria com a Oracle, o desafio era criar um jogo da velha com HTML, CSS, e JavaScript, contando com uma página para adicionar uma palavra nova na seleção de palavras padrões.
+
+## Badge do Challenge
 <br>
 <img height="500em" src="https://github.com/GustavoCMonteiro/alura-challenge-forca/blob/main/src/img/cms_files_10224_1644516322badge.png"/>
 <br>
