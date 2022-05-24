@@ -1,9 +1,3 @@
-# alura-challenge-forca
- Challenge feito para o bootcamp da Alura
- 
- https://gustavocmonteiro.github.io/alura-challenge-forca/
-
-
 # Challenge do bootcamp Alura - Jogo da Forca
 
 ## Link da Demo do site : [Jogo da Forca](https://gustavocmonteiro.github.io/alura-challenge-forca/)
@@ -16,3 +10,7 @@
      <img height="30m" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
   </a>
 </div>  
+
+<br>
+<img height="500em" src="https://d335luupugsy2.cloudfront.net/cms%2Ffiles%2F10224%2F1644516322badge.png?utm_campaign=alura_latam_-_challenge_email_projeto_2_br&utm_medium=email&utm_source=RD+Station"/>
+<br>
