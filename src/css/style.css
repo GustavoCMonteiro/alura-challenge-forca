@@ -284,7 +284,10 @@ input:focus {
     gap: 15px;
   }
   .forca {
-    padding: 10px;
+    padding: 0;
+  }
+  .forca-tip-div {
+    margin-top: 0;
   }
   .word-placeholder {
     font-size: 1.2rem;
@@ -300,7 +303,7 @@ input:focus {
   }
   .key {
     font-size: 1rem;
-    padding: 5px;
+    padding: 7.5px;
   }
   .button1,
   .button2 {
