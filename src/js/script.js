@@ -28,7 +28,7 @@ const wordsBase = [
   { word: "sino", tip: "Objeto" },
   { word: "armario", tip: "Objeto" },
   { word: "geladeira", tip: "Objeto" },
-  { word: "paralelepípedo", tip: "Objeto" },
+  { word: "paralelepipedo", tip: "Objeto" },
   { word: "futebol", tip: "Esporte" },
   { word: "basquete", tip: "Esporte" },
   { word: "peteca", tip: "Esporte" },
