@@ -12,5 +12,5 @@
 </div>  
 
 <br>
-<img height="500em" src="https://d335luupugsy2.cloudfront.net/cms%2Ffiles%2F10224%2F1644516322badge.png?utm_campaign=alura_latam_-_challenge_email_projeto_2_br&utm_medium=email&utm_source=RD+Station"/>
+<img height="500em" src="https://github.com/GustavoCMonteiro/alura-challenge-forca/blob/main/src/img/cms_files_10224_1644516322badge.png"/>
 <br>
