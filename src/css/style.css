@@ -1,20 +1,16 @@
 body {
   font-family: "Roboto Mono", monospace;
-  padding: 10px;
+  background-color: #e3d6e7;
 }
 
 .container {
   max-width: 1000px;
-  height: 800px;
   margin: 0 auto;
-  background-color: rgb(240, 240, 240);
-  border-radius: 5px;
+  background-color: #e3d6e7;
 }
 
 .header {
-  background-color: #b09eb7;
   padding: 10px 20px;
-  border-radius: 5px 5px 0 0;
 }
 
 .logo-alura {
@@ -24,7 +20,7 @@ body {
 .buttons-start,
 .word-add {
   max-width: 300px;
-  height: 800px;
+  height: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -33,9 +29,10 @@ body {
 }
 
 label {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   display: block;
   margin-bottom: 5px;
+  color: #444444;
 }
 
 input {
@@ -48,6 +45,7 @@ input {
   border-radius: 5px;
   outline: none;
   margin-bottom: 10px;
+  color: #444444;
 }
 
 input:focus {
@@ -56,19 +54,40 @@ input:focus {
 
 .forca {
   max-width: 800px;
+  height: 700px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.forca-tip {
+.forca-forca-div {
   font-size: 1.5rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  color: #444444;
+}
+
+.forca-tip-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.forca-tip {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }
 
 .forca-forca {
   height: 300px;
   display: flex;
   justify-content: center;
+  grid-column: 2;
+  grid-row: 1/-1;
 }
 
 .svg-forca {
@@ -80,6 +99,58 @@ input:focus {
   display: none;
 }
 
+.feedback {
+  align-self: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.winner,
+.loser,
+.feedback-key {
+  background-color: #95c79f;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+
+.loser,
+.feedback-key {
+  background-color: #c79595;
+}
+
+.show-result {
+  display: block;
+  animation: showResult 0.5s forwards;
+}
+
+.hide-result {
+  animation: hideResult 0.5s forwards;
+}
+
+@keyframes showResult {
+  from {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hideResult {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+}
+
 .forca-word {
   display: flex;
   justify-content: center;
@@ -89,6 +160,7 @@ input:focus {
 .word-placeholder {
   font-size: 2rem;
   position: relative;
+  color: #444444;
   margin-top: 20px;
 }
 
@@ -120,6 +192,7 @@ input:focus {
 
 .key {
   font-size: 1.2rem;
+  color: #444444;
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
@@ -144,7 +217,8 @@ input:focus {
 }
 
 .button1,
-.button2 {
+.button2,
+.button3 {
   background-color: #b09eb7;
   padding: 15px 30px;
   border-radius: 10px;
@@ -153,19 +227,28 @@ input:focus {
   cursor: pointer;
   transition: 0.5s;
   text-align: center;
+  color: #444444;
 }
 
 .button2 {
-  background-color: #ffffff;
-  border: 2px solid #b09eb7;
+  background-color: #444444;
+  color: white;
+}
+
+.button3 {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #444444;
+  color: white;
 }
 
 .button1:hover {
-  background-color: #573e61;
+  background-color: #705979;
 }
 
-.button2:hover {
-  border: 2px solid #573e61;
+.button2:hover,
+.button3:hover {
+  background-color: #202020;
 }
 
 .hide,
@@ -174,7 +257,7 @@ input:focus {
 }
 
 .key-correct {
-  background-color: rgb(122, 190, 122);
+  background-color: #95c79f;
 }
 
 .key-wrong {
@@ -199,6 +282,9 @@ input:focus {
 @media (max-width: 600px) {
   .forca-word {
     gap: 15px;
+  }
+  .forca {
+    padding: 10px;
   }
   .word-placeholder {
     font-size: 1.2rem;
@@ -226,5 +312,17 @@ input:focus {
   }
   input {
     font-size: 1rem;
+  }
+  .forca-forca-div {
+    display: block;
+  }
+  .feedback {
+    font-size: 1rem;
+    width: 200px;
+  }
+  .winner,
+  .loser,
+  .feedback-key {
+    padding: 10px;
   }
 }

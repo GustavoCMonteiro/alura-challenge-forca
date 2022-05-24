@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/aside-gustavo.css">
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 
@@ -51,24 +52,44 @@
 
     <section class="forca hide">
       <div class="forca-container">
-        <div class="forca-tip">Dica:Animal</div>
-        <div class="forca-forca">
-          <svg class="svg-forca">
-            <line x1="0" x2="200" y1="290" y2="290" stroke-width="7" stroke="black"></line>
-            <line x1="50" x2="50" y1="20" y2="290" stroke-width="7" stroke="black"></line>
-            <line x1="50" x2="190" y1="20" y2="20" stroke-width="7" stroke="black"></line>
-            <line x1="190" x2="190" y1="20" y2="45" stroke-width="7" stroke="black"></line>
-            <circle class="boneco hide-boneco" data-id="1" cx="190" cy="70" r="20" fill="none" stroke-width="5"></circle>
-            <line class="boneco hide-boneco" data-id="2" x1="190" x2="190" y1="90" y2="160" stroke-width="5"></line>
-            <line class="boneco hide-boneco" data-id="3" x1="150" x2="190" y1="140" y2="90" stroke-width="5"></line>
-            <line class="boneco hide-boneco" data-id="4" x1="230" x2="190" y1="140" y2="90" stroke-width="5"></line>
-            <line class="boneco hide-boneco" data-id="5" x1="190" x2="220" y1="160" y2="210" stroke-width="5"></line>
-            <line class="boneco hide-boneco" data-id="6" x1="190" x2="160" y1="160" y2="210" stroke-width="5">
-              <line>
-          </svg>
+        <div class="forca-forca-div">
+          <div class="forca-tip-div">
+            <span id="button-tip" class="button3">Dica</span>
+            <span class="forca-tip"></span>
+          </div>
+
+          <div class="forca-forca">
+            <svg class="svg-forca">
+              <line x1="0" x2="200" y1="290" y2="290" stroke-width="7" stroke="#444444"></line>
+              <line x1="50" x2="50" y1="20" y2="290" stroke-width="7" stroke="#444444"></line>
+              <line x1="50" x2="190" y1="20" y2="20" stroke-width="7" stroke="#444444"></line>
+              <line x1="190" x2="190" y1="20" y2="45" stroke-width="7" stroke="#444444"></line>
+              <circle class="boneco hide-boneco" data-id="1" cx="190" cy="70" r="20" fill="none" stroke-width="5"></circle>
+              <line class="boneco hide-boneco" data-id="2" x1="190" x2="190" y1="90" y2="160" stroke-width="5"></line>
+              <line class="boneco hide-boneco" data-id="3" x1="150" x2="190" y1="140" y2="90" stroke-width="5"></line>
+              <line class="boneco hide-boneco" data-id="4" x1="230" x2="190" y1="140" y2="90" stroke-width="5"></line>
+              <line class="boneco hide-boneco" data-id="5" x1="190" x2="220" y1="160" y2="210" stroke-width="5"></line>
+              <line class="boneco hide-boneco" data-id="6" x1="190" x2="160" y1="160" y2="210" stroke-width="5">
+                <line>
+            </svg>
+          </div>
+
+          <div class="feedback">
+            <div class="winner">
+              <span>Parabéns<br>você acertou!!</span>
+            </div>
+            <div class="loser">
+              <span>Que pena<br>você perdeu</span>
+            </div>
+            <div class="feedback-key">
+              <span>Tecla já usada</span>
+            </div>
+          </div>
         </div>
+
         <div class="div-forca-word">
         </div>
+
         <div class="forca-keyboard">
           <div class="keyboard-row first-row">
             <span data-key="q" class="key">q</span>
@@ -103,6 +124,7 @@
             <span data-key="m" class="key">m</span>
           </div>
         </div>
+
         <span class="hidden-word"></span>
       </div>
       <div class="buttons-forca">
@@ -112,8 +134,25 @@
     </section>
   </main>
 
-
-
+  <aside class="aside-height aside-bg">
+    <div class="aside-flex">
+      <p class="aside-text">Site Criado por Gustavo Monteiro</p>
+      <div class="aside-flex-redes">
+        <div>
+          <a class="aside-redes-flex" target="_blank" href="https://github.com/GustavoCMonteiro">
+            <span>GitHub</span>
+            <img class="img-redes" src="src/img/github.png" alt="">
+          </a>
+        </div>
+        <div>
+          <a class="aside-redes-flex" target="_blank" href="https://www.linkedin.com/in/gustavocmonteiro/">
+            <span>Linkedin</span>
+            <img class="img-redes" src="src/img/linkedin.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
   <script src="src/js/script.js"></script>
 </body>
 
