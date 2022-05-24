@@ -24,11 +24,14 @@ const wordsBase = [
   { word: "arquiteto", tip: "Profissão" },
   { word: "cozinheiro", tip: "Profissão" },
   { word: "vendedor", tip: "Profissão" },
-  { word: "cadeira", tip: "Objeto" },
-  { word: "mesa", tip: "Objeto" },
+  { word: "chuveiro", tip: "Objeto" },
+  { word: "sino", tip: "Objeto" },
   { word: "armario", tip: "Objeto" },
   { word: "geladeira", tip: "Objeto" },
-  { word: "sofa", tip: "Objeto" },
+  { word: "paralelepípedo", tip: "Objeto" },
+  { word: "futebol", tip: "Esporte" },
+  { word: "basquete", tip: "Esporte" },
+  { word: "peteca", tip: "Esporte" },
 ];
 
 // variaveis do HTML
