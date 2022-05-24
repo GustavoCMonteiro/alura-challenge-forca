@@ -34,68 +34,17 @@ const wordsBase = [
   { word: "oracle", tip: "Desafio Alura" },
 ];
 
-// resetar o jogo
-// resetar os espaços da palavra sorteada
-const removeSlots = () => {
-  const divSlots = document.getElementById("div-slots");
-  divSlots.remove();
-};
-
-// reiniciar o teclado virtual para o padrão
-const resetKeyboard = () => {
-  const keyboardDiv = document.querySelector(".forca-keyboard");
-  const forcaWord = document.querySelector(".div-forca-word");
-  keyboardDiv.style.display = "flex";
-  forcaWord.style.marginBottom = "0";
-  for (i = 0; i < keyboard.length; i++) {
-    keyboard[i].classList.remove("key-correct", "key-wrong");
-  }
-};
-
-// adicionar palavra nova
-const addWord = () => {
-  const inputWord = document.getElementById("palavra").value.toLowerCase();
-  const inputTip = document.getElementById("dica").value;
-  wordsBase.push({ word: inputWord, tip: inputTip });
-};
-
-// criar espaços para palavra sorteada
-const createSlots = (word) => {
-  const forcaWord = document.querySelector(".div-forca-word");
-  const div = document.createElement("div");
-  div.setAttribute("id", "div-slots");
-  div.classList.add("forca-word");
-  forcaWord.appendChild(div);
-  let i;
-  for (i = 0; i < word.length; i++) {
-    const span = document.createElement("span");
-    span.classList.add("word-placeholder");
-    span.innerHTML = "\u00A0";
-    div.appendChild(span);
-  }
-};
-
-// sortear palavra aleatória
-const createRandomWord = () => {
-  const randomWord =
-    wordsBase[Math.floor(Math.random() * (wordsBase.length - 1) + 1)];
-  const tipWord = document.querySelector(".forca-tip");
-  tipWord.textContent = "Dica: " + randomWord.tip;
-  hiddenWord.textContent = randomWord.word;
-  return randomWord.word;
-};
-
-// funcionalidades dos botões
+// variaveis do HTML
 const startPage = document.querySelector(".start");
 const addWordPage = document.querySelector(".word-add");
 const forcaPage = document.querySelector(".forca");
-
 const buttonStart = document.getElementById("button-start-game");
 const buttonAddWordPage = document.getElementById("button-add-word-page");
 const buttonAddWord = document.getElementById("button-add-word");
 const buttonReplay = document.getElementById("button-replay");
 const buttonGiveUp = document.getElementById("button-giveup");
 
+// funçionalidades do HTML
 // botão começar jogo
 buttonStart.addEventListener("click", () => {
   startPage.classList.add("hide");
@@ -104,12 +53,13 @@ buttonStart.addEventListener("click", () => {
   createSlots(randomWord);
 });
 
-// botão adicionar palavra nova
+// botão ir para página de adicionar palavra
 buttonAddWordPage.addEventListener("click", () => {
   startPage.classList.add("hide");
   addWordPage.classList.remove("hide");
 });
 
+// botão adicionar palavra nova
 buttonAddWord.addEventListener("click", () => {
   addWord();
   addWordPage.classList.add("hide");
@@ -135,7 +85,7 @@ buttonReplay.addEventListener("click", () => {
   }
 });
 
-// botão desistir
+// botão desistir do jogo
 buttonGiveUp.addEventListener("click", () => {
   const spanWord = document.querySelectorAll(".word-placeholder");
   const word = hiddenWord.textContent;
@@ -146,28 +96,85 @@ buttonGiveUp.addEventListener("click", () => {
   }
 });
 
-// letras usadas
-let usedKeys = [];
-
-// fim de jogo
-const endGame = () => {
-  const keyboardDiv = document.querySelector(".forca-keyboard");
-  const forcaWord = document.querySelector(".div-forca-word");
-  keyboardDiv.style.display = "none";
-  forcaWord.style.marginBottom = "50px";
+// funções básicas do programa
+// adicionar palavra nova
+const addWord = () => {
+  const inputWord = document.getElementById("palavra").value.toLowerCase();
+  const inputTip = document.getElementById("dica").value;
+  wordsBase.push({ word: inputWord, tip: inputTip });
 };
-// apertar letra errada
-let erros = 0;
-const wrongKey = (key) => {
-  const partsBoneco = document.querySelectorAll(".boneco");
-  key.classList.add("key-wrong");
-  partsBoneco[erros].classList.remove("hide-boneco");
-  erros++;
-  if (erros == 6) {
-    alert("voce perdeu");
-    endGame();
+
+// sortear palavra aleatória
+const createRandomWord = () => {
+  const randomWord =
+    wordsBase[Math.floor(Math.random() * (wordsBase.length - 1) + 1)];
+  const tipWord = document.querySelector(".forca-tip");
+  tipWord.textContent = "Dica: " + randomWord.tip;
+  hiddenWord.textContent = randomWord.word;
+  return randomWord.word;
+};
+
+// criar espaços para palavra sorteada
+const createSlots = (word) => {
+  const forcaWord = document.querySelector(".div-forca-word");
+  const div = document.createElement("div");
+  div.setAttribute("id", "div-slots");
+  div.classList.add("forca-word");
+  forcaWord.appendChild(div);
+  let i;
+  for (i = 0; i < word.length; i++) {
+    const span = document.createElement("span");
+    span.classList.add("word-placeholder");
+    span.innerHTML = "\u00A0";
+    div.appendChild(span);
   }
 };
+
+// funções de novo jogo
+// resetar os espaços da palavra sorteada
+const removeSlots = () => {
+  const divSlots = document.getElementById("div-slots");
+  divSlots.remove();
+};
+
+// reiniciar o teclado virtual para o padrão
+const resetKeyboard = () => {
+  const keyboardDiv = document.querySelector(".forca-keyboard");
+  const forcaWord = document.querySelector(".div-forca-word");
+  keyboardDiv.style.display = "flex";
+  forcaWord.style.marginBottom = "0";
+  for (i = 0; i < keyboard.length; i++) {
+    keyboard[i].classList.remove("key-correct", "key-wrong");
+  }
+};
+
+// funções do teclado virtual
+// variável que armazena as letras usadas
+let usedKeys = [];
+
+// apertando teclas do teclado virtual
+const keyboard = document.querySelectorAll("[data-key]");
+let i;
+for (i = 0; i < keyboard.length; i++) {
+  keyboard[i].addEventListener("click", verifyLetter);
+}
+
+// verificando tecla apertada, e escrevendo a palavra na tela
+const hiddenWord = document.querySelector(".hidden-word");
+function verifyLetter() {
+  const word = hiddenWord.textContent;
+  let keyPress = this.dataset.key;
+  if (!usedKeys.includes(keyPress)) {
+    if (!word.includes(keyPress)) {
+      wrongKey(this, keyPress);
+    } else {
+      correctKey(this, word, keyPress);
+    }
+    usedKeys.push(keyPress);
+  } else {
+    alert("voce ja usou essa letra");
+  }
+}
 
 // apertar letra certa
 let acertos = 0;
@@ -196,36 +203,23 @@ const correctKey = (key, word, keyPress) => {
   }
 };
 
-// verificando tecla apertada, e escrevendo a palavra na tela
-const hiddenWord = document.querySelector(".hidden-word");
-function verifyLetter() {
-  const word = hiddenWord.textContent;
-  let keyPress = this.dataset.key;
-  if (!usedKeys.includes(keyPress)) {
-    if (!word.includes(keyPress)) {
-      wrongKey(this, keyPress);
-    } else {
-      correctKey(this, word, keyPress);
-    }
-    usedKeys.push(keyPress);
-  } else {
-    alert("voce ja usou essa letra");
+// apertar letra errada
+let erros = 0;
+const wrongKey = (key) => {
+  const partsBoneco = document.querySelectorAll(".boneco");
+  key.classList.add("key-wrong");
+  partsBoneco[erros].classList.remove("hide-boneco");
+  erros++;
+  if (erros == 6) {
+    alert("voce perdeu");
+    endGame();
   }
-}
+};
 
-// apertando teclas do teclado virtual
-const keyboard = document.querySelectorAll("[data-key]");
-let i;
-for (i = 0; i < keyboard.length; i++) {
-  keyboard[i].addEventListener("click", verifyLetter);
-}
-
-const palavra = "banana";
-const palavraObject = [];
-let cont;
-for (cont = 0; cont < palavra.length; cont++) {
-  const letra = palavra[cont];
-  if (!palavraObject.includes(letra)) {
-    palavraObject.push(letra);
-  }
-}
+// fim de jogo após acertar todas as letras, ou errar 6 vezes
+const endGame = () => {
+  const keyboardDiv = document.querySelector(".forca-keyboard");
+  const forcaWord = document.querySelector(".div-forca-word");
+  keyboardDiv.style.display = "none";
+  forcaWord.style.marginBottom = "50px";
+};
