@@ -221,4 +221,10 @@ input:focus {
     padding: 10px 15px;
     font-size: 1rem;
   }
+  label {
+    font-size: 1rem;
+  }
+  input {
+    font-size: 1rem;
+  }
 }

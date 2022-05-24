@@ -102,7 +102,6 @@ buttonStart.addEventListener("click", () => {
   forcaPage.classList.remove("hide");
   const randomWord = createRandomWord();
   createSlots(randomWord);
-  console.log(randomWord);
 });
 
 // botão adicionar palavra nova
@@ -117,7 +116,6 @@ buttonAddWord.addEventListener("click", () => {
   forcaPage.classList.remove("hide");
   const randomWord = createRandomWord();
   createSlots(randomWord);
-  console.log(randomWord);
 });
 
 // botão recomeçar jogo
@@ -135,7 +133,6 @@ buttonReplay.addEventListener("click", () => {
   for (i = 0; i < 6; i++) {
     partsBoneco[i].classList.add("hide-boneco");
   }
-  console.log(randomWord);
 });
 
 // botão desistir
